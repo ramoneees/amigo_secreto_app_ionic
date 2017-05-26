@@ -12,15 +12,19 @@
 
 </ion-header>
 
+<button> Realizar Sorteio </button>
 
-<ion-content padding> 
-    <ion-list> 
-      <ion-item class="text" *ngFor="let item of items | async"> 
-          {{item.title}}
-      </ion-item>
+<ion-content padding>
+  <ion-list>
+    <ion-item class="text" *ngFor="let item of staticItems">
 
-    </ion-list>
+      <h2>{{item.name}}</h2>
+      <ion-avatar item-left>
+        <img src=ß{{item.picture}}>
+      </ion-avatar>
+    </ion-item>
 
+  </ion-list>
 </ion-content>
 
 <ion-content padding>

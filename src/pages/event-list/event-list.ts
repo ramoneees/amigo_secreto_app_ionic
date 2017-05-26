@@ -14,9 +14,16 @@ import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/databa
 })
 export class EventListPage {
   items: FirebaseListObservable<any[]>;
+  staticItems;
   constructor(public navCtrl: NavController, afDB : AngularFireDatabase) {
     this.items = afDB.list('/events');
     console.log(this.items);
+    let evento1 = new  Evento("test","evento1");
+    let evento2 = new  Evento("test","evento2");
+    let evento3 = new  Evento("test","evento3");
+
+    this.staticItems = [evento1,evento2,evento3];
+
   }
   
 
@@ -24,4 +31,14 @@ export class EventListPage {
     console.log('ionViewDidLoad EventListPage');
   }
 
+}
+
+
+class Evento{
+    picture: string;
+    name: string;
+    constructor(picture: string, name: string){
+      this.name = name;
+      this.picture = picture;
+    }
 }
